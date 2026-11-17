@@ -1,2 +1,16 @@
 <Solution>
+  <Folder Name="/Core/">
+    <Project Path="BankSystem/Core/Application.csproj" />
+    <Project Path="BankSystem/Core/Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="BankSystem/Infrastructure/CacheService/CacheService.csproj" Id="bb0dcd5e-6df7-4f3c-a70a-eebc8292cfa1" />
+    <Project Path="BankSystem/Infrastructure/JobService/JobService.csproj" Id="cf6dd999-0695-41bd-ae48-220d137be627" />
+    <Project Path="BankSystem/Infrastructure/Persistence/Persistence.csproj" Id="893847ab-19eb-477c-91ab-07f089ebd6ca" />
+  </Folder>
+  <Folder Name="/Infrastructure/Clients/" />
+  <Folder Name="/Presentation/">
+    <Project Path="BankSystem/Presentation/Api/Api.csproj" Id="aaa2ee0d-b51d-4fd7-bb5d-e7104c63e7ae" />
+    <Project Path="BankSystem/Presentation/Contracts/Contracts.csproj" Id="25d74b8c-13db-4f93-83e7-2157ba2f1dc7" />
+  </Folder>
 </Solution>
