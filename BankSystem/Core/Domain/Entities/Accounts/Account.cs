@@ -1,5 +1,5 @@
-﻿using Domain.Entities.Cards;
-using Domain.Entities.Common;
+﻿using Domain.Entities.Common;
+using Domain.Entities.Cards;
 using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities.Accounts

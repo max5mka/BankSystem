@@ -2,7 +2,7 @@
 {
     public enum CardStatus
     {
-        Activated,
-        Blocked,
+        Active,
+        Blocked
     }
 }
