@@ -2,7 +2,7 @@
 
 namespace Domain.Abstractions.Repositories
 {
-    internal interface ICardRepository
+    public interface ICardRepository
     {
         Task<Card> AddAsync(Card card, CancellationToken ct);
 
@@ -11,7 +11,7 @@ namespace Domain.Abstractions.Repositories
         Task<Card?> GetByIdAsync(Guid cardId, CancellationToken ct);
 
         Task<(IReadOnlyList<Card> List, int Count)> GetAllByUserIdAsync(
-            Guid userId, 
+            Guid userId,
             int pageNumber,
             int pageSize,
             CancellationToken ct);

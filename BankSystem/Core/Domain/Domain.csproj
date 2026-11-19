@@ -7,14 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Cards\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Abstractions\" />
+    <Folder Include="Exceptions\Account\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.14" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="10.0.15" />
   </ItemGroup>
 
 </Project>

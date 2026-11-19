@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/Core/">
-    <Project Path="BankSystem/Core/Application.csproj" />
-    <Project Path="BankSystem/Core/Domain.csproj" />
+    <Project Path="BankSystem/Core/Application/Application.csproj" Id="ab9dab94-a543-45f4-97da-cd874d16b53d" />
+    <Project Path="BankSystem/Core/Domain/Domain.csproj" Id="59782cb3-8335-4b85-bc2f-014258c574bd" />
   </Folder>
   <Folder Name="/Infrastructure/">
     <Project Path="BankSystem/Infrastructure/CacheService/CacheService.csproj" Id="bb0dcd5e-6df7-4f3c-a70a-eebc8292cfa1" />
@@ -13,4 +13,8 @@
     <Project Path="BankSystem/Presentation/Api/Api.csproj" Id="aaa2ee0d-b51d-4fd7-bb5d-e7104c63e7ae" />
     <Project Path="BankSystem/Presentation/Contracts/Contracts.csproj" Id="25d74b8c-13db-4f93-83e7-2157ba2f1dc7" />
   </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/Tests/" />
 </Solution>

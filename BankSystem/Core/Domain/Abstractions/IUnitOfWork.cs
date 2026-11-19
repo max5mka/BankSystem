@@ -1,6 +1,6 @@
 ﻿namespace Domain.Abstractions
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork
     {
         Task<int> SaveChangesAsync(CancellationToken ct = default);
     }

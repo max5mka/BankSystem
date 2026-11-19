@@ -1,5 +1,5 @@
-﻿using Domain.Entities.Common;
-using Domain.Entities.Accounts;
+﻿using Domain.Entities.Accounts;
+using Domain.Entities.Common;
 using Domain.Enums;
 using Domain.Exceptions.Card;
 
@@ -11,20 +11,22 @@ namespace Domain.Entities.Cards
 
         public Card(string digitCode, Guid ownerId, CardStatus status)
         {
-            DigitCode = digitCode;
-            OwnerId = ownerId;
+            Token = digitCode;
+            AccountId = ownerId;
             Status = status;
         }
 
-        public string DigitCode { get; private set; } = null!;
+        public string Token { get; private set; } = null!;
+
+        public string Last4 { get; private set; } = null!;
 
         public CardStatus Status { get; private set; }
 
         public DateTime? BlockedDateTime { get; private set; }
 
         /*** Relations ***/
-        public Guid OwnerId { get; private set; }
-        public Account User { get; private set; } = null!;
+        public Guid AccountId { get; private set; }
+        public Account Account { get; private set; } = null!;
 
         public void Block()
         {
