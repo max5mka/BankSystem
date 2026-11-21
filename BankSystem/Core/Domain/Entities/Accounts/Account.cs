@@ -1,6 +1,5 @@
 ﻿using Domain.Entities.Common;
 using Domain.Entities.Cards;
-using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities.Accounts
 {
@@ -8,10 +7,10 @@ namespace Domain.Entities.Accounts
     {
         public Account() { }
 
-        public Account(string login, string password)
+        public Account(string login, string hashedpassword)
         {
             Login = login;
-            HashedPassword = new PasswordHasher<string>().HashPassword(login, password);
+            HashedPassword = hashedpassword;
         }
 
         public string Login { get; private set; } = null!;
