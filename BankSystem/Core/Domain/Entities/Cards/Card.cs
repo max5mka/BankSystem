@@ -9,18 +9,18 @@ namespace Domain.Entities.Cards
     {
         public Card() { }
 
-        public Card(string digitCode, Guid ownerId, CardStatus status)
+        public Card(string token, string last4, Guid ownerId)
         {
-            Token = digitCode;
+            Token = token;
+            Last4 = last4;
             AccountId = ownerId;
-            Status = status;
         }
 
         public string Token { get; private set; } = null!;
 
         public string Last4 { get; private set; } = null!;
 
-        public CardStatus Status { get; private set; }
+        public CardStatus Status { get; private set; } = CardStatus.Active;
 
         public DateTime? BlockedDateTime { get; private set; }
 
