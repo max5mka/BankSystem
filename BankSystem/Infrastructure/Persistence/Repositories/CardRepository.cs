@@ -1,5 +1,6 @@
 ﻿using Domain.Abstractions.Repositories;
 using Domain.Entities.Cards;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Repositories
 {
@@ -15,13 +16,14 @@ namespace Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<(IReadOnlyList<Card> List, int Count)> GetAllByUserIdAsync(
-            Guid userId, 
-            int pageNumber, 
-            int pageSize, 
-            CancellationToken ct)
+        public async Task<IReadOnlyList<Card>> GetAllByAccountIdAsync(Guid accountId, CancellationToken ct)
         {
-            throw new NotImplementedException();
+            return await dataContext
+                .Cards
+                .AsNoTracking()
+                .Where(card => card.AccountId == accountId)
+                .OrderBy(card => card.CreatedAt)
+                .ToListAsync(ct);
         }
 
         public Task<Card?> GetByIdAsync(Guid cardId, CancellationToken ct)

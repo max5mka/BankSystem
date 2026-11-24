@@ -10,10 +10,6 @@ namespace Domain.Abstractions.Repositories
 
         Task<Card?> GetByIdAsync(Guid cardId, CancellationToken ct);
 
-        Task<(IReadOnlyList<Card> List, int Count)> GetAllByUserIdAsync(
-            Guid userId,
-            int pageNumber,
-            int pageSize,
-            CancellationToken ct);
+        Task<IReadOnlyList<Card>> GetAllByAccountIdAsync(Guid accountId, CancellationToken ct);
     }
 }

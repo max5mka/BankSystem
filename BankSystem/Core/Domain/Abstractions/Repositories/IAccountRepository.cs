@@ -4,12 +4,12 @@ namespace Domain.Abstractions.Repositories
 {
     public interface IAccountRepository
     {
-        Task<Account> AddAsync(Account user, CancellationToken ct);
+        Task<Account> AddAsync(Account account, CancellationToken ct);
 
-        Task<bool> ExistsAsync(Guid userId, CancellationToken ct);
+        Task<bool> ExistsAsync(Guid accountId, CancellationToken ct);
 
-        Task<Account?> GetByIdAsync(Guid userId, CancellationToken ct);
+        Task<Account?> GetByIdAsync(Guid accountId, CancellationToken ct);
 
-        Task<IReadOnlyList<Account>> GetAllAsync(CancellationToken ct);
+        Task<IReadOnlyList<Account>> GetAllAsync(int pageSize, int pageNumber, CancellationToken ct);
     }
 }
