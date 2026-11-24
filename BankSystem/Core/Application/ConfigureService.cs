@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
 {
@@ -6,7 +7,13 @@ namespace Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            // TODO config
+            var assembly = typeof(ConfigureService).Assembly;
+
+            /*** FluentValidation ***/
+            services.AddValidatorsFromAssembly(assembly);
+
+            /*** MediatR ***/
+            services.AddMediatR(config => config.RegisterServicesFromAssembly(assembly));
 
             return services;
         }

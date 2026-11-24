@@ -1,28 +1,32 @@
 ﻿using Domain.Abstractions.Repositories;
 using Domain.Entities.Accounts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Repositories
 {
-    internal class AccountRepository : IAccountRepository
+    internal class AccountRepository(DataContext dataContext) : IAccountRepository
     {
-        public Task<Account> AddAsync(Account user, CancellationToken ct)
+        public Task<Account> AddAsync(Account account, CancellationToken ct)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> ExistsAsync(Guid userId, CancellationToken ct)
+        public Task<bool> ExistsAsync(Guid accountId, CancellationToken ct)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IReadOnlyList<Account>> GetAllAsync(CancellationToken ct)
+        public Task<IReadOnlyList<Account>> GetAllAsync(int pageSize, int pageNumber, CancellationToken ct)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Account?> GetByIdAsync(Guid userId, CancellationToken ct)
+        public async Task<Account?> GetByIdAsync(Guid accountId, CancellationToken ct)
         {
-            throw new NotImplementedException();
+            return await dataContext
+                .Accounts
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id == accountId, ct);
         }
     }
 }
